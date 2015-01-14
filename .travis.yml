@@ -36,5 +36,5 @@ before_script: # Use this to prepare your build for testing e.g. copy database c
 
 script: 
   - cd ~/catkin_ws/ && catkin_make -DCMAKE_BUILD_TYPE=Release
-  - cd ~/catkin_ws/ && catkin_make run_tests_$CIRCLE_PROJECT_REPONAME
+  - cd ~/catkin_ws/ && catkin_make run_tests_$REPOSITORY_NAME
 
