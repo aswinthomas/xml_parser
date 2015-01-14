@@ -22,11 +22,10 @@ dependencies:
 ## Customize test commands
 test:
   pre:
-    - source /opt/ros/hydro/setup.bash
     - mkdir -p ~/catkin_ws/src
-    - mv CIRCLE_PROJECT_REPONAME ~/catkin_ws/src
+    - mv $CIRCLE_PROJECT_REPONAME ~/catkin_ws/src
     - cd ~/catkin_ws/src
-    - catkin_init_workspace
+    - source /opt/ros/hydro/setup.bash && catkin_init_workspace
     - cd ..
   override:
     - catkin_make -DCMAKE_BUILD_TYPE=Release
