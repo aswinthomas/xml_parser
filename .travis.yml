@@ -32,6 +32,8 @@ before_script: # Use this to prepare your build for testing e.g. copy database c
   - cd ~/catkin_ws/src 
   - source /opt/ros/hydro/setup.bash 
   - catkin_init_workspace
+  - grep -c ^processor /proc/cpuinfo
+  - grep -c ^processor /proc/cpuinfo | make
 
 script: 
   - cd ~/catkin_ws/ && catkin_make -DCMAKE_BUILD_TYPE=Release
